@@ -17,6 +17,10 @@ body {
   min-width: 1100px;
 }
 
+i.fas {
+  cursor: pointer;
+}
+
 /* Dichiarazioni comuni in entrambi i lati */
 
 /* Barra superiore */
@@ -31,9 +35,6 @@ body {
   font-size: 1.5rem;
 }
 
-.top-bar i {
-  cursor: pointer;
-}
 
 .top-bar .avatar {
   height: 50px;
@@ -149,6 +150,10 @@ main > .top-bar {
   border-bottom: 1px solid #dadada;
 }
 
+main > .top-bar > div >.name {
+  color: #000;
+}
+
 main > .top-bar > div:nth-child(2) i:nth-child(2) {
   padding-right: 30px;
   border-right: 1px solid #9fa3a5;
@@ -176,15 +181,42 @@ main > .chat > .message {
 }
 
 main > .chat > .user {
+  position: relative;
   align-self: flex-end;
   background: #dcf8c6;
+  border-top-right-radius: 0;
+}
+
+main > .chat > .user::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -10px;
+  height: 0;
+  width: 0;
+  border-left: 10px solid #dcf8c6;
+  border-bottom: 10px solid transparent;
 }
 
 main > .chat > .contact {
+  position: relative;
   background: #fff;
+  border-top-left-radius: 0;
+}
+
+main > .chat > .contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -10px;
+  height: 0;
+  width: 0;
+  border-right: 10px solid #fff;
+  border-bottom: 10px solid transparent;
 }
 
 main > .chat > .message > .text {
+  word-break: break-all;
   color: #000;
 }
 
@@ -198,6 +230,29 @@ main > .chat > .message > .date {
 /* Barra invio messaggi */
 
 main > .message-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 10px 25px;
   height: 70px;
   background: #f0f0f0;
+  font-size: 1.5rem;
+}
+
+main > .message-bar > input {
+  width: 100%;
+  padding: 10px 20px;
+  background: #fff;
+  background-size: 17px;
+  border: none;
+  border-radius: 50px;
+  outline: none;
+  font-family: Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif;
+  font-size: 1.2rem;
+  color: #000;
+}
+
+main > .message-bar  > input::placeholder {
+  color: #999999;
 }
