@@ -1,0 +1,66 @@
+/* Dichiarazioni generali */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #090e11;
+  font-family: Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif;
+  color: #525252;
+}
+
+#app {
+  display: flex;
+}
+
+/* Dichiarazioni comuni in entrambi i lati */
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 25px;
+  background: #ededed;
+  color: #5a6165;
+  font-size: 1.5rem;
+}
+
+.top-bar .avatar {
+  height: 50px;
+  border-radius: 50%;
+}
+
+.top-bar > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+
+/* Lato sinistro */
+
+aside {
+  width: 30%;
+  background: #442525;
+  border-right: 1px solid #dadada;
+}
+
+aside > .top-bar {
+  border-right: 1px solid #dadada;
+}
+
+/* Lato destro */
+
+main {
+  width: 70%;
+  background: #302544;
+}
+
+main > .top-bar > div:nth-child(2) i:nth-child(2) {
+  padding-right: 30px;
+  border-right: 1px solid #9fa3a5;
+}
