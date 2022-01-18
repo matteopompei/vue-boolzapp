@@ -14,9 +14,12 @@ body {
 
 #app {
   display: flex;
+  min-width: 1100px;
 }
 
 /* Dichiarazioni comuni in entrambi i lati */
+
+/* Barra superiore */
 
 .top-bar {
   display: flex;
@@ -49,15 +52,47 @@ aside {
   border-right: 1px solid #dadada;
 }
 
-aside > .top-bar {
-  border-right: 1px solid #dadada;
+/* Barra superiore sx */
+
+
+
+/* Barra di ricerca */
+
+aside > .search-bar {
+  padding: 15px;
+  background: #f6f6f6;
+  text-align: center;
 }
+
+aside > .search-bar > input {
+  width: 100%;
+  padding: 10px 20px 10px 50px;
+  background: #fff url("../img/search.svg") no-repeat 15px;
+  background-size: 17px;
+  border: none;
+  border-radius: 50px;
+  outline: none;
+  font-family: Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif;
+  font-size: 0.9rem;
+  color: #000;
+}
+
+aside > .search-bar > input::placeholder {
+  color: #999999;
+}
+
 
 /* Lato destro */
 
 main {
   width: 70%;
   background: #302544;
+}
+
+/* Barra superiore dx  */
+
+main > .top-bar {
+  border-left: 1px solid #dadada;
 }
 
 main > .top-bar > div:nth-child(2) i:nth-child(2) {
