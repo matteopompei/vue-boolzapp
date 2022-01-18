@@ -61,6 +61,8 @@ aside {
 aside > .search-bar {
   padding: 15px;
   background: #f6f6f6;
+  border-bottom: 1px solid #ebebeb;
+  box-shadow: 0 5px 5px #000;
   text-align: center;
 }
 
@@ -81,6 +83,53 @@ aside > .search-bar > input::placeholder {
   color: #999999;
 }
 
+/* Lista contatti */
+
+aside > .contact-list {
+  height: calc(100vh - 140px);
+  background: #fff;
+}
+
+/* Singolo contatto */
+
+aside > .contact-list > .contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #f2f2f2;
+  cursor: pointer;
+}
+
+aside > .contact-list > .contact:hover {
+  background: #ebebeb;
+  color: #000;
+}
+
+aside > .contact-list > .contact > .avatar img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+aside > .contact-list > .contact > .info {
+  flex-grow: 2;
+  word-break: break-all;
+}
+
+aside > .contact-list > .contact > .info > .name {
+  font-size: 1rem;
+}
+
+aside > .contact-list > .contact > .info > .last-mess {
+  font-size: 0.9rem;
+}
+
+aside > .contact-list > .contact > .date {
+  align-self: flex-start;
+  font-size: 0.8rem;
+
+}
 
 /* Lato destro */
 
