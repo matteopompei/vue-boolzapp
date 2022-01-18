@@ -31,9 +31,14 @@ body {
   font-size: 1.5rem;
 }
 
+.top-bar i {
+  cursor: pointer;
+}
+
 .top-bar .avatar {
   height: 50px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .top-bar > div {
@@ -49,7 +54,6 @@ body {
 aside {
   width: 30%;
   background: #442525;
-  border-right: 1px solid #dadada;
 }
 
 /* Barra superiore sx */
@@ -86,7 +90,7 @@ aside > .search-bar > input::placeholder {
 /* Lista contatti */
 
 aside > .contact-list {
-  height: calc(100vh - 140px);
+  height: calc(100vh - 141px);
   background: #fff;
 }
 
@@ -136,15 +140,64 @@ aside > .contact-list > .contact > .date {
 main {
   width: 70%;
   background: #302544;
+  border-left: 1px solid #dadada;
 }
 
 /* Barra superiore dx  */
 
 main > .top-bar {
-  border-left: 1px solid #dadada;
+  border-bottom: 1px solid #dadada;
 }
 
 main > .top-bar > div:nth-child(2) i:nth-child(2) {
   padding-right: 30px;
   border-right: 1px solid #9fa3a5;
+}
+
+/* Chat */
+
+main > .chat {
+  height: calc(100vh - 141px);
+  display: flex;
+  flex-direction: column;
+  padding: 0 50px;
+  background: #fff url("../img/chat-background-light.png") repeat;
+}
+
+main > .chat > .message {
+  display: flex;
+  gap: 30px;
+  border-radius: 5px;
+  width: fit-content;
+  max-width: 40%;
+  margin: 10px;
+  padding: 5px 10px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+main > .chat > .user {
+  align-self: flex-end;
+  background: #dcf8c6;
+}
+
+main > .chat > .contact {
+  background: #fff;
+}
+
+main > .chat > .message > .text {
+  color: #000;
+}
+
+main > .chat > .message > .date {
+  align-self: flex-end;
+  font-size: 0.8rem;
+  color: #505050;
+}
+
+
+/* Barra invio messaggi */
+
+main > .message-bar {
+  height: 70px;
+  background: #f0f0f0;
 }
