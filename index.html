@@ -61,7 +61,7 @@
         <div class="message-bar">
           <i class="fas fa-grin-alt"></i>
           <i class="fas fa-paperclip"></i>
-          <input type="text" placeholder="Scrivi un messaggio" />
+          <input type="text" placeholder="Scrivi un messaggio" v-model="inputMessage" @keyup.enter="sendMessage()" />
           <i class="fas fa-microphone"></i>
         </div>
       </main>

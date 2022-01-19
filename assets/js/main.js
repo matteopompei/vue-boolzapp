@@ -144,10 +144,22 @@ let app = new Vue({
       },
     ],
     focus: 0,
+    inputMessage: "",
   },
   methods: {
     changeChat: function(index) {
       this.focus = index;
+    },
+    sendMessage: function() {
+      let checkSpace = this.inputMessage.replace(/ /g, "");
+      if (checkSpace != "") {
+        this.contacts[this.focus].messages.push({
+          text: this.inputMessage,
+          date: "10/01/2021 12:30",
+          status: "sent"
+        });
+        this.inputMessage = "";
+      }
     }
   }
 });
