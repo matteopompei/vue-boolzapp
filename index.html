@@ -1,76 +1,81 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boolzapp</title>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-
-  <div id="app">
-    <aside>
-      <div class="top-bar">
-        <img src="assets/img/default-avatar.png" alt="" class="avatar">
-        <div>
-          <i class="fas fa-plus"></i>
-          <i class="fas fa-ellipsis-h"></i>
-        </div>
-      </div>
-      <div class="search-bar">
-        <input type="text" placeholder="Cerca o inizia una nuova chat">
-      </div>
-      <div class="contact-list">
-        <div class="contact">
-          <div class="avatar">
-            <img src="assets/img/default-avatar.png" alt="">
-          </div>
-          <div class="info">
-            <div class="name">Lorenzo Bernardini</div>
-            <div class="last-mess">bravo</div>
-          </div>
-          <div class="date">
-            03:33
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boolzapp</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <aside>
+        <div class="top-bar">
+          <img src="assets/img/user-avatar.jpg" alt="" class="avatar" />
+          <div>
+            <i class="fas fa-plus"></i>
+            <i class="fas fa-ellipsis-h"></i>
           </div>
         </div>
-      </div>
-    </aside>
-    <main>
-      <div class="top-bar">
-        <div>
-          <img src="assets/img/default-avatar.png" alt="" class="avatar">
-          <span class="name">Lorenzo Bernardini</span>
+        <div class="search-bar">
+          <input type="text" placeholder="Cerca o inizia una nuova chat" />
         </div>
-        <div>
-          <i class="fas fa-video"></i>
-          <i class="fas fa-phone-alt"></i>
-          <i class="fas fa-search"></i>
-          <i class="fas fa-ellipsis-h"></i>
+        <div class="contact-list">
+          <div class="contact" v-for="(contact, index) in contacts">
+            <div class="avatar">
+              <img :src="contact.avatar" alt="" />
+            </div>
+            <div class="info">
+              <div class="name">{{contact.name}}</div>
+              <div class="last-mess">{{contact.messages.at(-1).text}}</div>
+            </div>
+            <div class="date">{{contact.messages.at(-1).date}}</div>
+          </div>
         </div>
-      </div>
-      <div class="chat">
-        <div class="message user">
-          <span class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In eu mi bibendum neque.</span>
-          <span class="date">15:22</span>
+      </aside>
+      <main>
+        <div class="top-bar">
+          <div>
+            <img src="assets/img/default-avatar.png" alt="" class="avatar" />
+            <span class="name">Lorenzo Bernardini</span>
+          </div>
+          <div>
+            <i class="fas fa-video"></i>
+            <i class="fas fa-phone-alt"></i>
+            <i class="fas fa-search"></i>
+            <i class="fas fa-ellipsis-h"></i>
+          </div>
         </div>
-        <div class="message contact">
-          <span class="text">bravo</span>
-          <span class="date">03:33</span>
+        <div class="chat">
+          <div class="message user">
+            <span class="text"
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. In eu
+              mi bibendum neque.</span
+            >
+            <span class="date">15:22</span>
+          </div>
+          <div class="message contact">
+            <span class="text">bravo</span>
+            <span class="date">03:33</span>
+          </div>
         </div>
-      </div>
-      <div class="message-bar">
-        <i class="fas fa-grin-alt"></i>
-        <i class="fas fa-paperclip"></i>
-        <input type="text" placeholder="Scrivi un messaggio">
-        <i class="fas fa-microphone"></i>
-      </div>
-    </main>
+        <div class="message-bar">
+          <i class="fas fa-grin-alt"></i>
+          <i class="fas fa-paperclip"></i>
+          <input type="text" placeholder="Scrivi un messaggio" />
+          <i class="fas fa-microphone"></i>
+        </div>
+      </main>
+    </div>
 
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-  <script src="assets/js/main.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>

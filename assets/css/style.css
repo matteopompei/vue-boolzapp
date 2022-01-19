@@ -8,7 +8,8 @@
 
 body {
   background: #090e11;
-  font-family: Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif;
+  font-family: Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu,
+    Cantarell, Fira Sans, sans-serif;
   color: #525252;
 }
 
@@ -35,9 +36,9 @@ i.fas {
   font-size: 1.5rem;
 }
 
-
 .top-bar .avatar {
   height: 50px;
+  width: 50px;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -49,7 +50,6 @@ i.fas {
   gap: 30px;
 }
 
-
 /* Lato sinistro */
 
 aside {
@@ -59,8 +59,6 @@ aside {
 }
 
 /* Barra superiore sx */
-
-
 
 /* Barra di ricerca */
 
@@ -80,7 +78,8 @@ aside > .search-bar > input {
   border: none;
   border-radius: 50px;
   outline: none;
-  font-family: Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif;
+  font-family: Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu,
+    Cantarell, Fira Sans, sans-serif;
   font-size: 0.9rem;
   color: #000;
 }
@@ -114,6 +113,7 @@ aside > .contact-list > .contact:hover {
 }
 
 aside > .contact-list > .contact > .avatar img {
+  height: 70px;
   width: 70px;
   border-radius: 50%;
 }
@@ -158,7 +158,7 @@ main > .top-bar {
   border-bottom: 1px solid #dadada;
 }
 
-main > .top-bar > div >.name {
+main > .top-bar > div > .name {
   color: #000;
 }
 
@@ -197,7 +197,7 @@ main > .chat > .user {
 }
 
 main > .chat > .user::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: -10px;
@@ -214,7 +214,7 @@ main > .chat > .contact {
 }
 
 main > .chat > .contact::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -10px;
@@ -234,7 +234,6 @@ main > .chat > .message > .date {
   font-size: 0.8rem;
   color: #505050;
 }
-
 
 /* Barra invio messaggi */
 
@@ -257,11 +256,12 @@ main > .message-bar > input {
   border: none;
   border-radius: 50px;
   outline: none;
-  font-family: Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif;
+  font-family: Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu,
+    Cantarell, Fira Sans, sans-serif;
   font-size: 1.2rem;
   color: #000;
 }
 
-main > .message-bar  > input::placeholder {
+main > .message-bar > input::placeholder {
   color: #999999;
 }
