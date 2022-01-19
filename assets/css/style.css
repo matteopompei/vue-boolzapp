@@ -14,7 +14,7 @@ body {
 
 #app {
   display: flex;
-  min-width: 1100px;
+  /* min-width: 1100px; */
 }
 
 i.fas {
@@ -54,6 +54,7 @@ i.fas {
 
 aside {
   width: 30%;
+  min-width: 300px;
   background: #442525;
 }
 
@@ -113,7 +114,7 @@ aside > .contact-list > .contact:hover {
 }
 
 aside > .contact-list > .contact > .avatar img {
-  width: 50px;
+  width: 70px;
   border-radius: 50%;
 }
 
@@ -124,22 +125,29 @@ aside > .contact-list > .contact > .info {
 
 aside > .contact-list > .contact > .info > .name {
   font-size: 1rem;
+  color: #000;
 }
 
 aside > .contact-list > .contact > .info > .last-mess {
   font-size: 0.9rem;
+  color: #838383;
+}
+
+aside > .contact-list > .contact:hover > .info > .last-mess {
+  color: #000;
 }
 
 aside > .contact-list > .contact > .date {
   align-self: flex-start;
   font-size: 0.8rem;
-
+  color: #838383;
 }
 
 /* Lato destro */
 
 main {
   width: 70%;
+  min-width: 700px;
   background: #302544;
   border-left: 1px solid #dadada;
 }
@@ -165,6 +173,7 @@ main > .chat {
   height: calc(100vh - 141px);
   display: flex;
   flex-direction: column;
+  gap: 20px;
   padding: 0 50px;
   background: #fff url("../img/chat-background-light.png") repeat;
 }
@@ -174,7 +183,7 @@ main > .chat > .message {
   gap: 30px;
   border-radius: 5px;
   width: fit-content;
-  max-width: 40%;
+  max-width: 60%;
   margin: 10px;
   padding: 5px 10px;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
@@ -216,7 +225,7 @@ main > .chat > .contact::before {
 }
 
 main > .chat > .message > .text {
-  word-break: break-all;
+  word-break: break-word;
   color: #000;
 }
 
