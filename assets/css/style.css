@@ -93,6 +93,7 @@ aside > .search-bar > input::placeholder {
 aside > .contact-list {
   height: calc(100vh - 141px);
   background: #fff;
+  overflow-y: auto;
 }
 
 /* Singolo contatto */
@@ -170,6 +171,7 @@ main > .top-bar > div:nth-child(2) i:nth-child(2) {
 /* Chat */
 
 main > .chat {
+  overflow-y: auto;
   height: calc(100vh - 141px);
   display: flex;
   flex-direction: column;
