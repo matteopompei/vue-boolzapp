@@ -27,7 +27,7 @@
           <input type="text" placeholder="Cerca o inizia una nuova chat" />
         </div>
         <div class="contact-list">
-          <div class="contact" v-for="(contact, index) in contacts">
+          <div class="contact" :class="{active: focus == index}" v-for="(contact, index) in contacts" @click="changeChat(index)">
             <div class="avatar">
               <img :src="contact.avatar" alt="" />
             </div>
@@ -42,8 +42,8 @@
       <main>
         <div class="top-bar">
           <div>
-            <img src="assets/img/default-avatar.png" alt="" class="avatar" />
-            <span class="name">Lorenzo Bernardini</span>
+            <img :src="contacts[focus].avatar" alt="" class="avatar" />
+            <span class="name">{{contacts[focus].name}}</span>
           </div>
           <div>
             <i class="fas fa-video"></i>
@@ -53,17 +53,9 @@
           </div>
         </div>
         <div class="chat">
-          <div class="message user">
-            <span class="text"
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. In eu
-              mi bibendum neque.</span
-            >
-            <span class="date">15:22</span>
-          </div>
-          <div class="message contact">
-            <span class="text">bravo</span>
-            <span class="date">03:33</span>
+          <div class="message" :class="`${message.status}`" v-for="(message, index) in contacts[focus].messages">
+            <span class="text">{{message.text}}</span>
+            <span class="date">{{message.date}}</span>
           </div>
         </div>
         <div class="message-bar">

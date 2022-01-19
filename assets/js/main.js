@@ -6,6 +6,7 @@ let app = new Vue({
         name: "Lorenzo Bernardini",
         avatar: "assets/img/avatar-bernardini.png",
         visible: true,
+        active: false,
         messages: [
           {
             text: "Hey king come stai?",
@@ -43,6 +44,7 @@ let app = new Vue({
         name: "Simone Massaro",
         avatar: "assets/img/avatar-massaro.png",
         visible: true,
+        active: false,
         messages: [
           {
             text: "Somaro ci facciamo una partita ad Halo?",
@@ -62,9 +64,10 @@ let app = new Vue({
         ]
       },
       {
-        name: "Milan",
+        name: "Република Србија",
         avatar: "assets/img/avatar-milan.jpg",
         visible: true,
+        active: false,
         messages: [
           {
             text: "Wewe",
@@ -85,13 +88,14 @@ let app = new Vue({
             text: "Peffò! Arrivo!",
             date: "10/01/2021 12:30",
             status: "received"
-          }
+          },
         ]
       },
       {
         name: "Lorenzo Osnago",
         avatar: "assets/img/avatar-osnago.png",
         visible: true,
+        active: false,
         messages: [
           {
             text: "Ma come fai ad essere così forte?",
@@ -109,6 +113,7 @@ let app = new Vue({
         name: "Simone Bruno",
         avatar: "assets/img/avatar-bruno.png",
         visible: true,
+        active: false,
         messages: [
           {
             text: "Hey bro che fai?",
@@ -134,12 +139,15 @@ let app = new Vue({
             text: "Dove sei Bruno???????",
             date: "10/01/2021 12:30",
             status: "sent"
-          },
+          }
         ]
       },
     ],
+    focus: 0,
   },
   methods: {
-
+    changeChat: function(index) {
+      this.focus = index;
+    }
   }
 });
