@@ -175,7 +175,7 @@ main > .chat {
   height: calc(100vh - 141px);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 5px;
   padding: 0 50px;
   background: #fff url("../img/chat-background-light.png") repeat;
 }
@@ -186,7 +186,7 @@ main > .chat > .message {
   border-radius: 5px;
   width: fit-content;
   max-width: 60%;
-  margin: 10px;
+  margin: 5px;
   padding: 5px 10px;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }
