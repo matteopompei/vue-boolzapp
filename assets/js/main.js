@@ -9,35 +9,20 @@ let app = new Vue({
         active: false,
         messages: [
           {
-            text: "Hey king come stai?",
-            date: "10/01/2021 12:30",
-            status: "sent"
-          },
-          {
             text: "Hai capito?",
             date: "10/01/2021 12:30",
             status: "received"
           },
           {
-            text: "Che??",
+            text: "Che?",
             date: "10/01/2021 12:30",
             status: "sent"
           },
           {
-            text: "Bravo",
+            text: "Lo fanno",
             date: "10/01/2021 12:30",
             status: "received"
           },
-          {
-            text: "Fra ma che stai dicendo?",
-            date: "10/01/2021 12:30",
-            status: "sent"
-          },
-          {
-            text: "Bravo",
-            date: "10/01/2021 12:30",
-            status: "received"
-          }
         ]
       },
       {
@@ -159,7 +144,16 @@ let app = new Vue({
           status: "sent"
         });
         this.inputMessage = "";
-      }
+      };
+
+      setTimeout(this.sendReply, 1000);
+    },
+    sendReply: function() {
+      this.contacts[this.focus].messages.push({
+        text: "Bravo",
+        date: "10/01/2021 12:30",
+        status: "received"
+      });
     }
   }
 });
