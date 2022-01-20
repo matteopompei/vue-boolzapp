@@ -130,6 +130,7 @@ let app = new Vue({
     ],
     focus: 0,
     inputMessage: "",
+    inputSearch: "",
   },
   methods: {
     changeChat: function(index) {
@@ -144,9 +145,8 @@ let app = new Vue({
           status: "sent"
         });
         this.inputMessage = "";
+        setTimeout(this.sendReply, 1000);
       };
-
-      setTimeout(this.sendReply, 1000);
     },
     sendReply: function() {
       this.contacts[this.focus].messages.push({
@@ -154,6 +154,9 @@ let app = new Vue({
         date: "10/01/2021 12:30",
         status: "received"
       });
+    },
+    search: function() {
+      
     }
   }
 });
