@@ -114,6 +114,7 @@ aside > .contact-list > .contact:hover, aside > .contact-list > .contact.active 
 }
 
 aside > .contact-list > .contact > .avatar img {
+  margin-top: 4px;
   height: 70px;
   width: 70px;
   border-radius: 50%;
