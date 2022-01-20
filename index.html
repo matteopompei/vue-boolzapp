@@ -33,9 +33,9 @@
             </div>
             <div class="info">
               <div class="name">{{contact.name}}</div>
-              <div class="last-mess">{{contact.messages.at(-1).text}}</div>
+              <div class="last-mess" v-if="contacts[focus].messages.length > 0">{{contact.messages.at(-1).text}}</div>
             </div>
-            <div class="date">{{contact.messages.at(-1).date}}</div>
+            <div class="date" v-if="contacts[focus].messages.length > 0">{{contact.messages.at(-1).date}}</div>
           </div>
         </div>
       </aside>
@@ -59,7 +59,7 @@
             <i class="fas fa-angle-down" @click="message.openMessageOption = !message.openMessageOption"></i>
             <div class="message-options" v-if="message.openMessageOption">
               <a href="#">Info messaggio</a>
-              <a href="#">Cancella messaggio</a>
+              <a href="#" @click="deleteMessage(index, message)">Cancella messaggio</a>
             </div>
           </div>
         </div>

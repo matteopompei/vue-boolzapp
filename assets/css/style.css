@@ -22,6 +22,14 @@ i.fas {
   cursor: pointer;
 }
 
+.show {
+  display: inline-block;
+}
+
+.hidden {
+  display: none;
+}
+
 /* Dichiarazioni comuni in entrambi i lati */
 
 /* Barra superiore */

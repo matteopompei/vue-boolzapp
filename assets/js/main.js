@@ -155,6 +155,7 @@ let app = new Vue({
     focus: 0,
     inputMessage: "",
     inputSearch: "",
+    hiddenClass: false,
   },
   methods: {
     changeChat: function(index) {
@@ -179,6 +180,9 @@ let app = new Vue({
         date: "10/01/2021 12:30",
         status: "received"
       });
+    },
+    deleteMessage: function(index, message) {
+      this.contacts[this.focus].messages.splice(index, 1);
     }
   }
 });
