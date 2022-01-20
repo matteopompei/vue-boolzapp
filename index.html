@@ -33,9 +33,9 @@
             </div>
             <div class="info">
               <div class="name">{{contact.name}}</div>
-              <div class="last-mess" v-if="contacts[focus].messages.length > 0">{{contact.messages.at(-1).text}}</div>
+              <div class="last-mess" v-if="contact.messages.length > 0">{{contact.messages.at(-1).text}}</div>
             </div>
-            <div class="date" v-if="contacts[focus].messages.length > 0">{{contact.messages.at(-1).date}}</div>
+            <div class="date" v-if="contact.messages.length > 0">{{contact.messages.at(-1).date}}</div>
           </div>
         </div>
       </aside>
