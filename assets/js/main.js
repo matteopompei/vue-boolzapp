@@ -178,7 +178,8 @@ let app = new Vue({
       this.contacts[this.focus].messages.push({
         text: "Bravo",
         date: "10/01/2021 12:30",
-        status: "received"
+        status: "received",
+        openMessageOption: false,
       });
     },
     deleteMessage: function(index) {
