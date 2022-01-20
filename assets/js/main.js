@@ -9,12 +9,17 @@ let app = new Vue({
         active: false,
         messages: [
           {
+            text: "Mi piace lamentarmi della mia finta incompetenza",
+            date: "10/01/2021 12:30",
+            status: "received"
+          },
+          {
             text: "Hai capito?",
             date: "10/01/2021 12:30",
             status: "received"
           },
           {
-            text: "Che?",
+            text: "Sei sempre il solito!",
             date: "10/01/2021 12:30",
             status: "sent"
           },
@@ -22,7 +27,7 @@ let app = new Vue({
             text: "Lo fanno",
             date: "10/01/2021 12:30",
             status: "received"
-          },
+          }
         ]
       },
       {
@@ -40,11 +45,6 @@ let app = new Vue({
             text: "Tocca!",
             date: "10/01/2021 12:30",
             status: "received"
-          },
-          {
-            text: "Dai lesto, logga",
-            date: "10/01/2021 12:30",
-            status: "sent"
           }
         ]
       },
@@ -70,9 +70,14 @@ let app = new Vue({
             status: "sent"
           },
           {
-            text: "Peffò! Arrivo!",
+            text: "E quando lavoriamo a Massaro Runner?",
             date: "10/01/2021 12:30",
             status: "received"
+          },
+          {
+            text: "Appena abbiamo un momento libero",
+            date: "10/01/2021 12:30",
+            status: "sent"
           },
         ]
       },
