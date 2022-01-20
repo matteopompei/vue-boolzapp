@@ -159,9 +159,6 @@ let app = new Vue({
         date: "10/01/2021 12:30",
         status: "received"
       });
-    },
-    search: function() {
-      
     }
   }
 });
