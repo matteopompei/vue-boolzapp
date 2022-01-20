@@ -276,6 +276,7 @@ main > .chat > .message:hover > .fa-angle-down {
 main > .chat > .message > .message-options {
   position: absolute;
   z-index: 999;
+  width: max-content;
   padding: 10px 0;
   background: #fff;
   border-radius: 3px;
