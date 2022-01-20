@@ -53,13 +53,13 @@
           </div>
         </div>
         <div class="chat">
-          <div class="message" :class="`${message.status}`" v-for="(message, index) in contacts[focus].messages">
+          <div class="message" :class="message.status" v-for="(message, index) in contacts[focus].messages">
             <span class="text">{{message.text}}</span>
             <span class="date">{{message.date}}</span>
             <i class="fas fa-angle-down" @click="message.openMessageOption = !message.openMessageOption"></i>
             <div class="message-options" v-if="message.openMessageOption">
               <a href="#">Info messaggio</a>
-              <a href="#" @click="deleteMessage(index, message)">Cancella messaggio</a>
+              <a href="#" @click="deleteMessage(index)">Cancella messaggio</a>
             </div>
           </div>
         </div>

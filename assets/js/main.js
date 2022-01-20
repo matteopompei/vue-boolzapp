@@ -181,7 +181,7 @@ let app = new Vue({
         status: "received"
       });
     },
-    deleteMessage: function(index, message) {
+    deleteMessage: function(index) {
       this.contacts[this.focus].messages.splice(index, 1);
     }
   }
