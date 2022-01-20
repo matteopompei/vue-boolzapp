@@ -24,7 +24,7 @@
           </div>
         </div>
         <div class="search-bar">
-          <input type="text" placeholder="Cerca o inizia una nuova chat" />
+          <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="inputSearch" />
         </div>
         <div class="contact-list">
           <div class="contact" :class="{active: focus == index}" v-for="(contact, index) in contacts" @click="changeChat(index)">
@@ -62,7 +62,8 @@
           <i class="fas fa-grin-alt"></i>
           <i class="fas fa-paperclip"></i>
           <input type="text" placeholder="Scrivi un messaggio" v-model="inputMessage" @keyup.enter="sendMessage()" />
-          <i class="fas fa-microphone"></i>
+          <i class="fas fa-microphone" style="margin-left: 8px;" v-if="inputMessage == ''"></i>
+          <i class="fas fa-paper-plane" @click="sendMessage()" v-else></i>
         </div>
       </main>
     </div>
