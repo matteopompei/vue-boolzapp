@@ -56,6 +56,11 @@
           <div class="message" :class="`${message.status}`" v-for="(message, index) in contacts[focus].messages">
             <span class="text">{{message.text}}</span>
             <span class="date">{{message.date}}</span>
+            <i class="fas fa-angle-down"></i>
+            <div class="message-options">
+              <a href="#">Info messaggio</a>
+              <a href="#">Cancella messaggio</a>
+            </div>
           </div>
         </div>
         <div class="message-bar">

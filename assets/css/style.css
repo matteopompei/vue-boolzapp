@@ -238,6 +238,37 @@ main > .chat > .message > .date {
   color: #505050;
 }
 
+/* Opzioni messaggio */
+
+main > .chat > .message > .fa-angle-down {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  border-radius: 50%;
+  padding: 0 5px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  font-size: 1.5rem;
+}
+
+main > .chat > .message.sent > .fa-angle-down {
+  color: #a7bc96;
+  text-shadow: 0 0 15px #dcf8c6, 0 0 10px #dcf8c6, 0 0 5px #dcf8c6;
+}
+
+main > .chat > .message.received > .fa-angle-down {
+  color: #bfbfbf;
+  text-shadow: 0 0 15px #fff, 0 0 10px #fff, 0 0 5px #fff;
+}
+
+main > .chat > .message:hover > .fa-angle-down {
+  opacity: 1;
+}
+
+main > .chat > .message > .message-options {
+  display: none;
+}
+
 /* Barra invio messaggi */
 
 main > .message-bar {
