@@ -7,6 +7,7 @@ let app = new Vue({
         avatar: "assets/img/avatar-bernardini.png",
         visible: true,
         active: false,
+        writing: false,
         messages: [
           {
             text: "Mi piace lamentarmi della mia finta incompetenza",
@@ -170,8 +171,7 @@ let app = new Vue({
           openMessageOption: false,
         });
         this.inputMessage = "";
-        this.updateScroll();
-        // setTimeout(this.sendReply, 1000);
+        setTimeout(this.sendReply, 1000);
       }
     },
     sendReply: function () {
@@ -181,8 +181,6 @@ let app = new Vue({
         status: "received",
         openMessageOption: false,
       });
-      this.updateScroll();
-
     },
     deleteMessage: function (index) {
       this.contacts[this.focus].messages.splice(index, 1);
@@ -192,4 +190,7 @@ let app = new Vue({
       chat.scrollTop = chat.scrollHeight;
     },
   },
+  updated: function() {
+    this.updateScroll();
+  }
 });
