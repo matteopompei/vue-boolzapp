@@ -24,18 +24,32 @@
           </div>
         </div>
         <div class="search-bar">
-          <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="inputSearch" />
+          <input
+            type="text"
+            placeholder="Cerca o inizia una nuova chat"
+            v-model="inputSearch"
+          />
         </div>
         <div class="contact-list">
-          <div class="contact" :class="{active: focus == index}" v-for="(contact, index) in contacts" @click="changeChat(index)" v-if="contact.name.toLowerCase().includes(inputSearch)">
+          <div
+            class="contact"
+            :class="{active: focus == index}"
+            v-for="(contact, index) in contacts"
+            @click="changeChat(index)"
+            v-if="contact.name.toLowerCase().includes(inputSearch)"
+          >
             <div class="avatar">
               <img :src="contact.avatar" alt="" />
             </div>
             <div class="info">
               <div class="name">{{contact.name}}</div>
-              <div class="last-mess" v-if="contact.messages.length > 0">{{contact.messages.at(-1).text}}</div>
+              <div class="last-mess" v-if="contact.messages.length > 0">
+                {{contact.messages.at(-1).text}}
+              </div>
             </div>
-            <div class="date" v-if="contact.messages.length > 0">{{contact.messages.at(-1).date}}</div>
+            <div class="date" v-if="contact.messages.length > 0">
+              {{contact.messages.at(-1).date}}
+            </div>
           </div>
         </div>
       </aside>
@@ -53,10 +67,17 @@
           </div>
         </div>
         <div class="chat">
-          <div class="message" :class="message.status" v-for="(message, index) in contacts[focus].messages">
+          <div
+            class="message"
+            :class="message.status"
+            v-for="(message, index) in contacts[focus].messages"
+          >
             <span class="text">{{message.text}}</span>
             <span class="date">{{message.date}}</span>
-            <i class="fas fa-angle-down" @click="message.openMessageOption = !message.openMessageOption"></i>
+            <i
+              class="fas fa-angle-down"
+              @click="message.openMessageOption = !message.openMessageOption"
+            ></i>
             <div class="message-options" v-if="message.openMessageOption">
               <a href="#">Info messaggio</a>
               <a href="#" @click="deleteMessage(index)">Cancella messaggio</a>
@@ -66,14 +87,24 @@
         <div class="message-bar">
           <i class="fas fa-grin-alt"></i>
           <i class="fas fa-paperclip"></i>
-          <input type="text" placeholder="Scrivi un messaggio" v-model="inputMessage" @keyup.enter="sendMessage()" />
-          <i class="fas fa-microphone" style="margin-left: 8px;" v-if="inputMessage == ''"></i>
+          <input
+            type="text"
+            placeholder="Scrivi un messaggio"
+            v-model="inputMessage"
+            @keyup.enter="sendMessage()"
+          />
+          <i
+            class="fas fa-microphone"
+            style="margin-left: 8px"
+            v-if="inputMessage == ''"
+          ></i>
           <i class="fas fa-paper-plane" @click="sendMessage()" v-else></i>
         </div>
       </main>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/dayjs.min.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

@@ -10,30 +10,29 @@ let app = new Vue({
         messages: [
           {
             text: "Mi piace lamentarmi della mia finta incompetenza",
-            date: "10/01/2021 12:30",
+            date: "19/01/2021 12:30",
             status: "received",
             openMessageOption: false,
           },
           {
             text: "Hai capito?",
-            date: "10/01/2021 12:30",
+            date: "19/01/2021 12:31",
             status: "received",
             openMessageOption: false,
           },
           {
             text: "Sei sempre il solito!",
-            date: "10/01/2021 12:30",
+            date: "19/01/2021 12:35",
             status: "sent",
             openMessageOption: false,
-
           },
           {
             text: "Lo fanno",
-            date: "10/01/2021 12:30",
+            date: "19/01/2021 12:38",
             status: "received",
             openMessageOption: false,
-          }
-        ]
+          },
+        ],
       },
       {
         name: "Simone Massaro",
@@ -43,17 +42,17 @@ let app = new Vue({
         messages: [
           {
             text: "Somaro ci facciamo una partita ad Halo?",
-            date: "10/01/2021 12:30",
+            date: "16/01/2021 04:05",
             status: "sent",
             openMessageOption: false,
           },
           {
             text: "Tocca!",
-            date: "10/01/2021 12:30",
+            date: "16/01/2021 04:10",
             status: "received",
             openMessageOption: false,
-          }
-        ]
+          },
+        ],
       },
       {
         name: "Република Србија",
@@ -63,35 +62,35 @@ let app = new Vue({
         messages: [
           {
             text: "Wewe",
-            date: "10/01/2021 12:30",
+            date: "15/01/2021 08:30",
             status: "received",
             openMessageOption: false,
           },
           {
             text: "Hey",
-            date: "10/01/2021 12:30",
+            date: "15/01/2021 08:34",
             status: "sent",
             openMessageOption: false,
           },
           {
             text: "Ci guardiamo il corso delle crypto per boomer oggi?",
-            date: "10/01/2021 12:30",
+            date: "15/01/2021 08:37",
             status: "sent",
             openMessageOption: false,
           },
           {
             text: "E quando lavoriamo a Massaro Runner?",
-            date: "10/01/2021 12:30",
+            date: "15/01/2021 08:38",
             status: "received",
             openMessageOption: false,
           },
           {
             text: "Appena abbiamo un momento libero",
-            date: "10/01/2021 12:30",
+            date: "15/01/2021 08:38",
             status: "sent",
             openMessageOption: false,
           },
-        ]
+        ],
       },
       {
         name: "Lorenzo Osnago",
@@ -101,17 +100,17 @@ let app = new Vue({
         messages: [
           {
             text: "Ma come fai ad essere così forte?",
-            date: "10/01/2021 12:30",
+            date: "10/01/2021 10:00",
             status: "sent",
             openMessageOption: false,
           },
           {
             text: "...",
-            date: "10/01/2021 12:30",
+            date: "10/01/2021 13:27",
             status: "received",
             openMessageOption: false,
-          }
-        ]
+          },
+        ],
       },
       {
         name: "Simone Bruno",
@@ -121,35 +120,35 @@ let app = new Vue({
         messages: [
           {
             text: "Hey bro che fai?",
-            date: "10/01/2021 12:30",
+            date: "15/03/2012 15:10",
             status: "sent",
             openMessageOption: false,
           },
           {
             text: "❄❄❄❄❄❄",
-            date: "10/01/2021 12:30",
+            date: "15/03/2012 15:45",
             status: "received",
             openMessageOption: false,
           },
           {
             text: "Che?",
-            date: "10/01/2021 12:30",
+            date: "15/03/2012 15:55",
             status: "sent",
             openMessageOption: false,
           },
           {
             text: "Pronto?",
-            date: "10/01/2021 12:30",
+            date: "15/03/2012 23:40",
             status: "sent",
             openMessageOption: false,
           },
           {
             text: "Dove sei Bruno???????",
-            date: "10/01/2021 12:30",
+            date: "27/10/2012 17:15",
             status: "sent",
             openMessageOption: false,
-          }
-        ]
+          },
+        ],
       },
     ],
     focus: 0,
@@ -158,32 +157,32 @@ let app = new Vue({
     hiddenClass: false,
   },
   methods: {
-    changeChat: function(index) {
+    changeChat: function (index) {
       this.focus = index;
     },
-    sendMessage: function() {
+    sendMessage: function () {
       let checkSpace = this.inputMessage.replace(/ /g, "");
       if (checkSpace != "") {
         this.contacts[this.focus].messages.push({
           text: this.inputMessage,
-          date: "10/01/2021 12:30",
+          date: dayjs().format("DD/MM/YYYY HH:mm"),
           status: "sent",
           openMessageOption: false,
         });
         this.inputMessage = "";
         setTimeout(this.sendReply, 1000);
-      };
+      }
     },
-    sendReply: function() {
+    sendReply: function () {
       this.contacts[this.focus].messages.push({
         text: "Bravo",
-        date: "10/01/2021 12:30",
+        date: dayjs().format("DD/MM/YYYY HH:mm"),
         status: "received",
         openMessageOption: false,
       });
     },
-    deleteMessage: function(index) {
+    deleteMessage: function (index) {
       this.contacts[this.focus].messages.splice(index, 1);
-    }
-  }
+    },
+  },
 });
