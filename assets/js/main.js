@@ -170,7 +170,8 @@ let app = new Vue({
           openMessageOption: false,
         });
         this.inputMessage = "";
-        setTimeout(this.sendReply, 1000);
+        this.updateScroll();
+        // setTimeout(this.sendReply, 1000);
       }
     },
     sendReply: function () {
@@ -180,9 +181,15 @@ let app = new Vue({
         status: "received",
         openMessageOption: false,
       });
+      this.updateScroll();
+
     },
     deleteMessage: function (index) {
       this.contacts[this.focus].messages.splice(index, 1);
+    },
+    updateScroll: function () {
+      let chat = document.getElementById("chat");
+      chat.scrollTop = chat.scrollHeight;
     },
   },
 });
