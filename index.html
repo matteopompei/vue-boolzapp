@@ -57,7 +57,10 @@
         <div class="top-bar">
           <div>
             <img :src="contacts[focus].avatar" alt="" class="avatar" />
-            <span class="name">{{contacts[focus].name}}</span>
+            <div>
+              <span class="name">{{contacts[focus].name}}</span>
+              <span class="status">{{contacts[focus].status}}<span>
+            </div>
           </div>
           <div>
             <i class="fas fa-video"></i>

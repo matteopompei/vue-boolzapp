@@ -7,6 +7,7 @@
 }
 
 body {
+  overflow: hidden;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -169,8 +170,15 @@ main > .top-bar {
   border-bottom: 1px solid #dadada;
 }
 
-main > .top-bar > div > .name {
+main > .top-bar .name {
+  display: block;
   color: #000;
+}
+
+main > .top-bar .status {
+  display: block;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 main > .top-bar > div:nth-child(2) i:nth-child(2) {
@@ -279,6 +287,7 @@ main > .chat > .message:hover > .fa-angle-down {
 
 main > .chat > .message > .message-options {
   position: absolute;
+  top: 25px;
   z-index: 999;
   width: max-content;
   padding: 10px 0;
@@ -291,12 +300,10 @@ main > .chat > .message > .message-options {
 }
 
 main > .chat > .message.sent > .message-options {
-  top: 25px;
   right: 10px;
 }
 
 main > .chat > .message.received > .message-options {
-  top: 25px;
   right: -170px;
 }
 

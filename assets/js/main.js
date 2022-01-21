@@ -7,7 +7,7 @@ let app = new Vue({
         avatar: "assets/img/avatar-bernardini.png",
         visible: true,
         active: false,
-        writing: false,
+        status: "Ultimo accesso il 19/01/2021 alle 12:38",
         messages: [
           {
             text: "Mi piace lamentarmi della mia finta incompetenza",
@@ -40,6 +40,7 @@ let app = new Vue({
         avatar: "assets/img/avatar-massaro.png",
         visible: true,
         active: false,
+        status: "Ultimo accesso il 16/01/2021 alle 05:40",
         messages: [
           {
             text: "Somaro ci facciamo una partita ad Halo?",
@@ -60,6 +61,7 @@ let app = new Vue({
         avatar: "assets/img/avatar-milan.jpg",
         visible: true,
         active: false,
+        status: "Ultimo accesso il 15/01/2021 alle 10:14",
         messages: [
           {
             text: "Wewe",
@@ -98,6 +100,7 @@ let app = new Vue({
         avatar: "assets/img/avatar-osnago.png",
         visible: true,
         active: false,
+        status: "Ultimo accesso il 14/01/2021 alle 13:41",
         messages: [
           {
             text: "Ma come fai ad essere così forte?",
@@ -118,6 +121,7 @@ let app = new Vue({
         avatar: "assets/img/avatar-bruno.png",
         visible: true,
         active: false,
+        status: "Ultimo accesso il 15/03/2012 alle 15:45",
         messages: [
           {
             text: "Hey bro che fai?",
@@ -171,6 +175,9 @@ let app = new Vue({
           openMessageOption: false,
         });
         this.inputMessage = "";
+        setTimeout(() => {
+          this.contacts[this.focus].status = "Sta scrivendo...";
+        }, 500);
         setTimeout(this.sendReply, 1000);
       }
     },
@@ -181,6 +188,10 @@ let app = new Vue({
         status: "received",
         openMessageOption: false,
       });
+      this.contacts[this.focus].status = "Online";
+      setTimeout(() => {
+        this.contacts[this.focus].status = "Ultimo accesso oggi alle " + dayjs().format("HH:mm");
+      }, 2000);
     },
     deleteMessage: function (index) {
       this.contacts[this.focus].messages.splice(index, 1);
