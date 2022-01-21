@@ -196,6 +196,7 @@ main > .chat {
 main > .chat > .message {
   display: flex;
   gap: 15px;
+  position: relative;
   border-radius: 5px;
   width: fit-content;
   max-width: 60%;
@@ -205,7 +206,6 @@ main > .chat > .message {
 }
 
 main > .chat > .sent {
-  position: relative;
   align-self: flex-end;
   background: #dcf8c6;
   border-top-right-radius: 0;
@@ -223,7 +223,6 @@ main > .chat > .sent::after {
 }
 
 main > .chat > .received {
-  position: relative;
   background: #fff;
   border-top-left-radius: 0;
 }
