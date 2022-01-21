@@ -10,7 +10,8 @@ body {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, 'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif;
+  font-family: "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", Arial,
+    Ubuntu, Cantarell, "Fira Sans", sans-serif;
   color: #525252;
 }
 
@@ -85,7 +86,8 @@ aside > .search-bar > input {
   border: none;
   border-radius: 50px;
   outline: none;
-  font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, 'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif;
+  font-family: "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", Arial,
+    Ubuntu, Cantarell, "Fira Sans", sans-serif;
   font-size: 0.9rem;
   color: #000;
 }
@@ -114,7 +116,8 @@ aside > .contact-list > .contact {
   cursor: pointer;
 }
 
-aside > .contact-list > .contact:hover, aside > .contact-list > .contact.active {
+aside > .contact-list > .contact:hover,
+aside > .contact-list > .contact.active {
   background: #ebebeb;
   color: #000;
 }
@@ -156,7 +159,7 @@ aside > .contact-list > .contact > .date {
 
 main {
   width: 70%;
-  min-width: 700px;
+  min-width: 600px;
   border-left: 1px solid #dadada;
 }
 
@@ -330,7 +333,8 @@ main > .message-bar > input {
   border: none;
   border-radius: 50px;
   outline: none;
-  font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, 'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif;
+  font-family: "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", Arial,
+    Ubuntu, Cantarell, "Fira Sans", sans-serif;
   font-size: 1.2rem;
   color: #000;
   -webkit-user-select: text;
