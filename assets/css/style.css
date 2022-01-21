@@ -7,15 +7,15 @@
 }
 
 body {
-  background: #090e11;
-  font-family: Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu,
-    Cantarell, Fira Sans, sans-serif;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, 'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif;
   color: #525252;
 }
 
 #app {
   display: flex;
-  /* min-width: 1100px; */
 }
 
 i.fas {
@@ -63,7 +63,6 @@ i.fas {
 aside {
   width: 30%;
   min-width: 400px;
-  background: #442525;
 }
 
 /* Barra superiore sx */
@@ -86,8 +85,7 @@ aside > .search-bar > input {
   border: none;
   border-radius: 50px;
   outline: none;
-  font-family: Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu,
-    Cantarell, Fira Sans, sans-serif;
+  font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, 'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif;
   font-size: 0.9rem;
   color: #000;
 }
@@ -149,6 +147,7 @@ aside > .contact-list > .contact:hover > .info > .last-mess {
 
 aside > .contact-list > .contact > .date {
   align-self: flex-start;
+  white-space: nowrap;
   font-size: 0.8rem;
   color: #838383;
 }
@@ -158,7 +157,6 @@ aside > .contact-list > .contact > .date {
 main {
   width: 70%;
   min-width: 700px;
-  background: #302544;
   border-left: 1px solid #dadada;
 }
 
@@ -187,11 +185,14 @@ main > .chat {
   gap: 5px;
   padding: 0 50px;
   background: #fff url("../img/chat-background-light.png") repeat;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }
 
 main > .chat > .message {
   display: flex;
-  gap: 30px;
+  gap: 15px;
   border-radius: 5px;
   width: fit-content;
   max-width: 60%;
@@ -242,6 +243,7 @@ main > .chat > .message > .text {
 
 main > .chat > .message > .date {
   align-self: flex-end;
+  white-space: nowrap;
   font-size: 0.8rem;
   color: #505050;
 }
@@ -281,6 +283,9 @@ main > .chat > .message > .message-options {
   background: #fff;
   border-radius: 3px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 main > .chat > .message.sent > .message-options {
@@ -325,10 +330,12 @@ main > .message-bar > input {
   border: none;
   border-radius: 50px;
   outline: none;
-  font-family: Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu,
-    Cantarell, Fira Sans, sans-serif;
+  font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, 'Lucida Grande', Arial, Ubuntu, Cantarell, 'Fira Sans', sans-serif;
   font-size: 1.2rem;
   color: #000;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }
 
 main > .message-bar > input::placeholder {
