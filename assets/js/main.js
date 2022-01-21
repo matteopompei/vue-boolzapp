@@ -165,10 +165,10 @@ let app = new Vue({
     changeChat: function (index) {
       this.focus = index;
     },
-    sendMessage: function () {
+    sendMessage: function (focus) {
       let checkSpace = this.inputMessage.replace(/ /g, "");
       if (checkSpace != "") {
-        this.contacts[this.focus].messages.push({
+        this.contacts[focus].messages.push({
           text: this.inputMessage,
           date: dayjs().format("DD/MM/YYYY HH:mm"),
           status: "sent",
@@ -176,21 +176,21 @@ let app = new Vue({
         });
         this.inputMessage = "";
         setTimeout(() => {
-          this.contacts[this.focus].status = "Sta scrivendo...";
+          this.contacts[focus].status = "Sta scrivendo...";
         }, 500);
-        setTimeout(this.sendReply, 1000);
+        setTimeout(this.sendReply(focus), 1000);
       }
     },
-    sendReply: function () {
-      this.contacts[this.focus].messages.push({
+    sendReply: function (focus) {
+      this.contacts[focus].messages.push({
         text: "Bravo",
         date: dayjs().format("DD/MM/YYYY HH:mm"),
         status: "received",
         openMessageOption: false,
       });
-      this.contacts[this.focus].status = "Online";
+      this.contacts[focus].status = "Online";
       setTimeout(() => {
-        this.contacts[this.focus].status = "Ultimo accesso oggi alle " + dayjs().format("HH:mm");
+        this.contacts[focus].status = "Ultimo accesso oggi alle " + dayjs().format("HH:mm");
       }, 2000);
     },
     deleteMessage: function (index) {

@@ -94,14 +94,14 @@
             type="text"
             placeholder="Scrivi un messaggio"
             v-model="inputMessage"
-            @keyup.enter="sendMessage()"
+            @keyup.enter="sendMessage(focus)"
           />
           <i
             class="fas fa-microphone"
             style="margin-left: 8px"
             v-if="inputMessage == ''"
           ></i>
-          <i class="fas fa-paper-plane" @click="sendMessage()" v-else></i>
+          <i class="fas fa-paper-plane" @click="sendMessage(focus)" v-else></i>
         </div>
       </main>
     </div>
