@@ -185,12 +185,16 @@ let app = new Vue({
         this.updateScroll();
         this.inputMessage = "";
         setTimeout(() => {
-          this.contacts[focus].status = "Sta scrivendo...";
+          this.contacts[focus].status = "Online";
         }, 500);
-        setTimeout(this.sendReply(focus), 1000);
+        setTimeout(() => {
+          this.contacts[focus].status = "Sta scrivendo...";
+        }, 1500);
+        setTimeout(this.sendReply(focus), 3000);
       }
     },
     sendReply: function (focus) {
+      console.log("ciao");
       this.contacts[focus].messages.push({
         text: "Bravo",
         date: dayjs().format("DD/MM/YYYY HH:mm"),
@@ -202,7 +206,6 @@ let app = new Vue({
       setTimeout(() => {
         this.contacts[focus].status = "Ultimo accesso oggi alle " + dayjs().format("HH:mm");
       }, 2000);
-  
     },
     deleteMessage: function (index) {
       this.contacts[this.focus].messages.splice(index, 1);
@@ -217,6 +220,7 @@ let app = new Vue({
       this.contacts[this.focus].messages.splice(0, this.contacts[this.focus].messages.length);
     },
     deleteChat: function(index) {
+      this.focus = -1;
       this.contacts.splice(index, 1);
     },
   },
