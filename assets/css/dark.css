@@ -48,7 +48,7 @@ aside > .search-bar {
 aside > .search-bar > input {
   background: #323739 url("../img/search-dark.svg") no-repeat 15px;
   background-size: 17px;
-  color: #323739;
+  color: #c0c2c4;
 }
 
 aside > .search-bar > input::placeholder {
