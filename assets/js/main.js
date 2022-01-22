@@ -41,6 +41,7 @@ let app = new Vue({
         avatar: "assets/img/avatar-massaro.png",
         visible: true,
         active: false,
+        options: false,
         status: "Ultimo accesso il 16/01/2021 alle 05:40",
         messages: [
           {
@@ -62,6 +63,7 @@ let app = new Vue({
         avatar: "assets/img/avatar-milan.jpg",
         visible: true,
         active: false,
+        options: false,
         status: "Ultimo accesso il 15/01/2021 alle 10:14",
         messages: [
           {
@@ -101,6 +103,7 @@ let app = new Vue({
         avatar: "assets/img/avatar-osnago.png",
         visible: true,
         active: false,
+        options: false,
         status: "Ultimo accesso il 14/01/2021 alle 13:41",
         messages: [
           {
@@ -122,6 +125,7 @@ let app = new Vue({
         avatar: "assets/img/avatar-bruno.png",
         visible: true,
         active: false,
+        options: false,
         status: "Ultimo accesso il 15/03/2012 alle 15:45",
         messages: [
           {
@@ -200,6 +204,9 @@ let app = new Vue({
     updateScroll: function () {
       let chat = document.getElementById("chat");
       chat.scrollTop = chat.scrollHeight;
+    },
+    deleteAll: function() {
+      this.contacts[this.focus].messages.splice(0, this.contacts[this.focus].messages.length);
     },
   },
   updated: function() {
