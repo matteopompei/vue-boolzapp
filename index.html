@@ -55,58 +55,65 @@
         </div>
       </aside>
       <main>
-        <div class="top-bar">
-          <div>
-            <img :src="contacts[focus].avatar" alt="" class="avatar" />
+        <div class="welcome" v-if="focus < 0">
+          <img src="assets/img/intro-light.jpg" alt="">
+          <div class="title">Mantieni il telefono connesso</div>
+          <div>WhatsApp si collega al tuo telefono per sincronizzare i messaggi. Per ridurre l'utilizzo dei dati, collega il telefono al Wi-Fi.</div>
+        </div>
+        <div v-else>
+          <div class="top-bar">
             <div>
-              <span class="name">{{contacts[focus].name}}</span>
-              <span class="status">{{contacts[focus].status}}<span>
+              <img :src="contacts[focus].avatar" alt="" class="avatar" />
+              <div>
+                <span class="name">{{contacts[focus].name}}</span>
+                <span class="status">{{contacts[focus].status}}<span>
+              </div>
+            </div>
+            <div>
+              <i class="fas fa-video"></i>
+              <i class="fas fa-phone-alt"></i>
+              <i class="fas fa-search"></i>
+              <i class="fas fa-ellipsis-h" @click="contacts[focus].options = !contacts[focus].options"></i>
+              <div class="options" v-if="contacts[focus].options">
+                <a href="#" @click="deleteAll()">Elimina messaggi</a>
+                <a href="#" @click="deleteChat(focus)">Elimina chat</a>
+              </div>
             </div>
           </div>
-          <div>
-            <i class="fas fa-video"></i>
-            <i class="fas fa-phone-alt"></i>
-            <i class="fas fa-search"></i>
-            <i class="fas fa-ellipsis-h" @click="contacts[focus].options = !contacts[focus].options"></i>
-            <div class="options" v-if="contacts[focus].options">
-              <a href="#" @click="deleteAll()">Elimina messaggi</a>
-              <a href="#" @click="deleteChat(focus)">Elimina chat</a>
+          <div class="chat" id="chat">
+            <div
+              class="message"
+              :class="message.status"
+              v-for="(message, index) in contacts[focus].messages"
+            >
+              <span class="text">{{message.text}}</span>
+              <span class="date">{{message.date}}</span>
+              <i
+                class="fas fa-angle-down"
+                @click="message.openMessageOption = !message.openMessageOption"
+              ></i>
+              <div class="options" v-if="message.openMessageOption">
+                <a href="#">Info messaggio</a>
+                <a href="#" @click="deleteMessage(index)">Cancella messaggio</a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="chat" id="chat">
-          <div
-            class="message"
-            :class="message.status"
-            v-for="(message, index) in contacts[focus].messages"
-          >
-            <span class="text">{{message.text}}</span>
-            <span class="date">{{message.date}}</span>
+          <div class="message-bar">
+            <i class="fas fa-grin-alt"></i>
+            <i class="fas fa-paperclip"></i>
+            <input
+              type="text"
+              placeholder="Scrivi un messaggio"
+              v-model="inputMessage"
+              @keyup.enter="sendMessage(focus)"
+            />
             <i
-              class="fas fa-angle-down"
-              @click="message.openMessageOption = !message.openMessageOption"
+              class="fas fa-microphone"
+              style="margin-left: 8px"
+              v-if="inputMessage == ''"
             ></i>
-            <div class="options" v-if="message.openMessageOption">
-              <a href="#">Info messaggio</a>
-              <a href="#" @click="deleteMessage(index)">Cancella messaggio</a>
-            </div>
+            <i class="fas fa-paper-plane" @click="sendMessage(focus)" v-else></i>
           </div>
-        </div>
-        <div class="message-bar">
-          <i class="fas fa-grin-alt"></i>
-          <i class="fas fa-paperclip"></i>
-          <input
-            type="text"
-            placeholder="Scrivi un messaggio"
-            v-model="inputMessage"
-            @keyup.enter="sendMessage(focus)"
-          />
-          <i
-            class="fas fa-microphone"
-            style="margin-left: 8px"
-            v-if="inputMessage == ''"
-          ></i>
-          <i class="fas fa-paper-plane" @click="sendMessage(focus)" v-else></i>
         </div>
       </main>
     </div>

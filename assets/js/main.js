@@ -161,7 +161,7 @@ let app = new Vue({
         ],
       },
     ],
-    focus: 0,
+    focus: -1,
     inputMessage: "",
     inputSearch: "",
     hiddenClass: false,
