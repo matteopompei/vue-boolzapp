@@ -8,6 +8,7 @@ let app = new Vue({
         visible: true,
         active: false,
         status: "Ultimo accesso il 19/01/2021 alle 12:38",
+        options: false,
         messages: [
           {
             text: "Mi piace lamentarmi della mia finta incompetenza",
