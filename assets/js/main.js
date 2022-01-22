@@ -208,6 +208,9 @@ let app = new Vue({
     deleteAll: function() {
       this.contacts[this.focus].messages.splice(0, this.contacts[this.focus].messages.length);
     },
+    deleteChat: function(index) {
+      this.contacts.splice(index, 1);
+    },
   },
   updated: function() {
     this.updateScroll();
