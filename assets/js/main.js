@@ -166,6 +166,8 @@ let app = new Vue({
     inputMessage: "",
     inputSearch: "",
     hiddenClass: false,
+    darkMode: false,
+    introImg: "assets/img/intro-light.jpg"
   },
   methods: {
     changeChat: function (index) {
@@ -222,5 +224,16 @@ let app = new Vue({
     setTimeout(() => {
       this.appLoading = false;
     }, 2000);
+  }
+});
+
+// Cambio tema
+let tema = document.getElementById("tema");
+
+document.querySelector(".change-theme").addEventListener("click", function() {
+  if (tema.getAttribute("href") == "assets/css/light.css") {
+    tema.setAttribute("href", "assets/css/dark.css");
+  } else {
+    tema.setAttribute("href", "assets/css/light.css");
   }
 });

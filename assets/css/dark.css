@@ -1,0 +1,191 @@
+/* Questo documento gestisce solo i colori */
+
+/* Dichiarazioni generali */
+
+body {
+  color: #adadad;
+}
+
+/* Caricamento App */
+
+.app-loading {
+  background: #131c21;
+}
+
+/* Menù opzioni */
+
+.options {
+  background: #2a2f32;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.options > a {
+  color: #c9cbcd;
+}
+
+.options > a:hover {
+  background: #20272b;
+}
+
+/* Dichiarazioni comuni in entrambi i lati */
+
+/* Barra superiore */
+
+.top-bar {
+  background: #2a2f32;
+  color: #b1b3b5;
+}
+
+/* Barra superiore sx */
+
+/* Barra di ricerca */
+
+aside > .search-bar {
+  background: #131c21;
+  border-bottom: 1px solid #252d32;
+}
+
+aside > .search-bar > input {
+  background: #323739 url("../img/search-dark.svg") no-repeat 15px;
+  background-size: 17px;
+  color: #323739;
+}
+
+aside > .search-bar > input::placeholder {
+  color: #848788;
+}
+
+/* Lista contatti */
+
+aside > .contact-list {
+  background: #131c21;
+}
+
+/* Singolo contatto */
+
+aside > .contact-list > .contact {
+  border-bottom: 1px solid #30383c;
+}
+
+aside > .contact-list > .contact:hover,
+aside > .contact-list > .contact.active {
+  background: #323739;
+  color: #e2e2e3;
+}
+
+aside > .contact-list > .contact > .info > .name {
+  color: #dfe0c3;
+}
+
+aside > .contact-list > .contact > .info > .last-mess {
+  color: #9fa2a5;
+}
+
+aside > .contact-list > .contact:hover > .info > .last-mess {
+  color: #cbcccd;
+}
+
+aside > .contact-list > .contact > .date {
+  color: #9fa2a5;
+}
+
+/* Lato destro */
+
+main {
+  border-left: 1px solid #282f32;
+}
+
+/* Messaggio di benvenuto */
+main > .welcome {
+  background: #222f37;
+  border-bottom: 10px solid #056162;
+}
+
+main > .welcome > div {
+  color: #a6a8ab;
+}
+
+main > .welcome > .title {
+  color: #d9d9db;
+}
+
+/* Barra superiore dx  */
+
+main .top-bar {
+  border-bottom: 1px solid #2a2f32;
+}
+
+main .top-bar .name {
+  color: #e1e2e3;
+}
+
+main .top-bar .status {
+  color: #9a9c9f;
+}
+
+main .top-bar > div:nth-child(2) i:nth-child(2) {
+  border-right: 1px solid #9fa3a5;
+}
+
+/* Chat */
+
+main .chat {
+  background: #1a222a url("../img/chat-background-dark.png") repeat;
+}
+
+main .chat > .message {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+main .chat > .sent {
+  background: #056162;
+}
+
+main .chat > .sent::after {
+  border-left: 10px solid #056162;
+  border-bottom: 10px solid transparent;
+}
+
+main .chat > .received {
+  background: #262d31;
+}
+
+main .chat > .received::before {
+  border-right: 10px solid #262d31;
+  border-bottom: 10px solid transparent;
+}
+
+main .chat > .message > .text {
+  color: #e5eaeb;
+}
+
+main .chat > .message > .date {
+  color: #8eb5b6;
+}
+
+/* Opzioni messaggio */
+
+main .chat > .message.sent > .fa-angle-down {
+  color: #797e81;
+  text-shadow: 0 0 15px #056162, 0 0 10px #056162, 0 0 5px #056162;
+}
+
+main .chat > .message.received > .fa-angle-down {
+  color: #7caaaa;
+  text-shadow: 0 0 15px #262d31, 0 0 10px #262d31, 0 0 5px #262d31;
+}
+
+/* Barra invio messaggi */
+
+main .message-bar {
+  background: #1e2428;
+}
+
+main .message-bar > input {
+  background: #33383b;
+  color: #f1f1f2;
+}
+
+main .message-bar > input::placeholder {
+  color: #85888a;
+}

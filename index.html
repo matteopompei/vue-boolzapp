@@ -13,6 +13,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/light.css" id="tema" />
   </head>
   <body>
     <div id="app">
@@ -25,6 +26,8 @@
           <div class="top-bar">
             <img src="assets/img/user-avatar.jpg" alt="" class="avatar" />
             <div>
+              <i class="fas fa-sun change-theme" @click="darkMode = true, introImg = 'assets/img/intro-dark.jpg'" v-if="darkMode == false"></i>
+              <i class="fas fa-moon change-theme"@click="darkMode = false, introImg = 'assets/img/intro-light.jpg'" v-else></i>
               <i class="fas fa-plus"></i>
               <i class="fas fa-ellipsis-h"></i>
             </div>
@@ -61,7 +64,7 @@
         </aside>
         <main>
           <div class="welcome" v-if="focus < 0">
-            <img src="assets/img/intro-light.jpg" alt="">
+            <img :src="introImg" alt="">
             <div class="title">Mantieni il telefono connesso</div>
             <div>WhatsApp si collega al tuo telefono per sincronizzare i messaggi. Per ridurre l'utilizzo dei dati, collega il telefono al Wi-Fi.</div>
           </div>

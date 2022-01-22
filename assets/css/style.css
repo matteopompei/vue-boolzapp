@@ -13,7 +13,6 @@ body {
   user-select: none;
   font-family: "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", Arial,
     Ubuntu, Cantarell, "Fira Sans", sans-serif;
-  color: #525252;
 }
 
 #app > div {
@@ -43,7 +42,6 @@ i.fas {
   width: 100%;
   height: 100vh;
   padding: 50px;
-  background: #fff;
   font-size: 2rem;
   font-weight: 100;
   text-align: center;
@@ -67,9 +65,7 @@ i.fas {
   z-index: 999;
   width: max-content;
   padding: 10px 0;
-  background: #fff;
   border-radius: 3px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -78,12 +74,7 @@ i.fas {
 .options > a {
   display: block;
   padding: 15px 30px;
-  color: inherit;
   text-decoration: none;
-}
-
-.options > a:hover {
-  background: #f5f5f5;
 }
 
 /* Dichiarazioni comuni in entrambi i lati */
@@ -96,8 +87,6 @@ i.fas {
   position: relative;
   align-items: center;
   padding: 10px 25px;
-  background: #ededed;
-  color: #5a6165;
   font-size: 1.5rem;
 }
 
@@ -128,15 +117,12 @@ aside {
 
 aside > .search-bar {
   padding: 15px;
-  background: #f6f6f6;
-  border-bottom: 1px solid #ebebeb;
   text-align: center;
 }
 
 aside > .search-bar > input {
   width: 100%;
   padding: 10px 20px 10px 50px;
-  background: #fff url("../img/search.svg") no-repeat 15px;
   background-size: 17px;
   border: none;
   border-radius: 50px;
@@ -144,18 +130,12 @@ aside > .search-bar > input {
   font-family: "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", Arial,
     Ubuntu, Cantarell, "Fira Sans", sans-serif;
   font-size: 0.9rem;
-  color: #000;
-}
-
-aside > .search-bar > input::placeholder {
-  color: #999999;
 }
 
 /* Lista contatti */
 
 aside > .contact-list {
   height: calc(100vh - 141px);
-  background: #fff;
   overflow-y: auto;
 }
 
@@ -167,14 +147,7 @@ aside > .contact-list > .contact {
   align-items: center;
   gap: 20px;
   padding: 10px;
-  border-bottom: 1px solid #f2f2f2;
   cursor: pointer;
-}
-
-aside > .contact-list > .contact:hover,
-aside > .contact-list > .contact.active {
-  background: #ebebeb;
-  color: #000;
 }
 
 aside > .contact-list > .contact > .avatar img {
@@ -191,23 +164,16 @@ aside > .contact-list > .contact > .info {
 
 aside > .contact-list > .contact > .info > .name {
   font-size: 1rem;
-  color: #000;
 }
 
 aside > .contact-list > .contact > .info > .last-mess {
   font-size: 0.9rem;
-  color: #838383;
-}
-
-aside > .contact-list > .contact:hover > .info > .last-mess {
-  color: #000;
 }
 
 aside > .contact-list > .contact > .date {
   align-self: flex-start;
   white-space: nowrap;
   font-size: 0.8rem;
-  color: #838383;
 }
 
 /* Lato destro */
@@ -215,7 +181,6 @@ aside > .contact-list > .contact > .date {
 main {
   width: 70%;
   min-width: 600px;
-  border-left: 1px solid #dadada;
 }
 
 /* Messaggio di benvenuto */
@@ -227,8 +192,6 @@ main > .welcome {
   gap: 50px;
   height: 100vh;
   padding: 50px;
-  background: #f8f9fa;
-  border-bottom: 10px solid #4adf83;
   text-align: center;
 }
 
@@ -240,19 +203,13 @@ main > .welcome > img {
 main > .welcome > div {
   font-weight: 100;
   font-size: 0.9rem;
-  color: #888989;
 }
 
 main > .welcome > .title {
   font-size: 2.5rem;
-  color: #525252;
 }
 
 /* Barra superiore dx  */
-
-main .top-bar {
-  border-bottom: 1px solid #dadada;
-}
 
 main .top-bar .options {
   top: 60px;
@@ -262,18 +219,15 @@ main .top-bar .options {
 
 main .top-bar .name {
   display: block;
-  color: #000;
 }
 
 main .top-bar .status {
   display: block;
   font-size: 0.9rem;
-  color: rgba(0, 0, 0, 0.6);
 }
 
 main .top-bar > div:nth-child(2) i:nth-child(2) {
   padding-right: 30px;
-  border-right: 1px solid #9fa3a5;
 }
 
 /* Chat */
@@ -285,7 +239,6 @@ main .chat {
   flex-direction: column;
   gap: 5px;
   padding: 0 50px;
-  background: #fff url("../img/chat-background-light.png") repeat;
   -webkit-user-select: text;
   -ms-user-select: text;
   user-select: text;
@@ -300,12 +253,10 @@ main .chat > .message {
   max-width: 60%;
   margin: 5px;
   padding: 5px 10px;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 
 main .chat > .sent {
   align-self: flex-end;
-  background: #dcf8c6;
   border-top-right-radius: 0;
 }
 
@@ -316,12 +267,9 @@ main .chat > .sent::after {
   right: -10px;
   height: 0;
   width: 0;
-  border-left: 10px solid #dcf8c6;
-  border-bottom: 10px solid transparent;
 }
 
 main .chat > .received {
-  background: #fff;
   border-top-left-radius: 0;
 }
 
@@ -332,20 +280,16 @@ main .chat > .received::before {
   left: -10px;
   height: 0;
   width: 0;
-  border-right: 10px solid #fff;
-  border-bottom: 10px solid transparent;
 }
 
 main .chat > .message > .text {
   word-break: break-word;
-  color: #000;
 }
 
 main .chat > .message > .date {
   align-self: flex-end;
   white-space: nowrap;
   font-size: 0.8rem;
-  color: #505050;
 }
 
 /* Opzioni messaggio */
@@ -359,16 +303,6 @@ main .chat > .message > .fa-angle-down {
   opacity: 0;
   transition: opacity 0.2s;
   font-size: 1.5rem;
-}
-
-main .chat > .message.sent > .fa-angle-down {
-  color: #a7bc96;
-  text-shadow: 0 0 15px #dcf8c6, 0 0 10px #dcf8c6, 0 0 5px #dcf8c6;
-}
-
-main .chat > .message.received > .fa-angle-down {
-  color: #bfbfbf;
-  text-shadow: 0 0 15px #fff, 0 0 10px #fff, 0 0 5px #fff;
 }
 
 main .chat > .message:hover > .fa-angle-down {
@@ -387,17 +321,6 @@ main .chat > .message.received > .options {
   right: -170px;
 }
 
-main .chat > .message > .options > a {
-  display: block;
-  padding: 15px 30px;
-  color: inherit;
-  text-decoration: none;
-}
-
-main .chat > .message > .options > a:hover {
-  background: #f5f5f5;
-}
-
 /* Barra invio messaggi */
 
 main .message-bar {
@@ -407,27 +330,19 @@ main .message-bar {
   gap: 30px;
   padding: 10px 25px;
   height: 70px;
-  background: #f0f0f0;
   font-size: 1.5rem;
 }
 
 main .message-bar > input {
   width: 100%;
   padding: 10px 20px;
-  background: #fff;
-  background-size: 17px;
   border: none;
   border-radius: 50px;
   outline: none;
   font-family: "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", Arial,
     Ubuntu, Cantarell, "Fira Sans", sans-serif;
   font-size: 1.2rem;
-  color: #000;
   -webkit-user-select: text;
   -ms-user-select: text;
   user-select: text;
-}
-
-main .message-bar > input::placeholder {
-  color: #999999;
 }
