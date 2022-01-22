@@ -161,6 +161,7 @@ let app = new Vue({
         ],
       },
     ],
+    appLoading: true,
     focus: -1,
     inputMessage: "",
     inputSearch: "",
@@ -211,6 +212,11 @@ let app = new Vue({
     deleteChat: function(index) {
       this.contacts.splice(index, 1);
     },
+  },
+  mounted: function(){
+    setTimeout(() => {
+      this.appLoading = false;
+    }, 2000);
   },
   updated: function() {
     this.updateScroll();

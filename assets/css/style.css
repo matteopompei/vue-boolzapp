@@ -32,7 +32,36 @@ i.fas {
   display: none;
 }
 
+/* Caricamento App */
+
+.app-loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  height: 100vh;
+  padding: 50px;
+  background: #fff;
+  font-size: 2rem;
+  font-weight: 100;
+  text-align: center;
+}
+
+.app-loading .fa-circle-notch {
+  font-size: 5rem;
+  animation: loading-icon-spinning 1s linear infinite;
+}
+
+@keyframes loading-icon-spinning {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* Menù opzioni */
+
 .options {
   position: absolute;
   z-index: 999;
@@ -196,7 +225,7 @@ main {
 }
 
 /* Messaggio di benvenuto */
-.welcome {
+main > .welcome {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -209,18 +238,18 @@ main {
   text-align: center;
 }
 
-.welcome > img {
+main > .welcome > img {
   height: 355px;
   width: 356px;
 }
 
-.welcome > div {
+main > .welcome > div {
   font-weight: 100;
   font-size: 0.9rem;
   color: #888989;
 }
 
-.welcome > .title {
+main > .welcome > .title {
   /* margin-bottom: 30px; */
   font-size: 2.5rem;
   color: #525252;
