@@ -180,6 +180,7 @@ let app = new Vue({
           status: "sent",
           openMessageOption: false,
         });
+        this.updateScroll();
         this.inputMessage = "";
         setTimeout(() => {
           this.contacts[focus].status = "Sta scrivendo...";
@@ -194,17 +195,21 @@ let app = new Vue({
         status: "received",
         openMessageOption: false,
       });
+      this.updateScroll();
       this.contacts[focus].status = "Online";
       setTimeout(() => {
         this.contacts[focus].status = "Ultimo accesso oggi alle " + dayjs().format("HH:mm");
       }, 2000);
+  
     },
     deleteMessage: function (index) {
       this.contacts[this.focus].messages.splice(index, 1);
     },
     updateScroll: function () {
       let chat = document.getElementById("chat");
-      chat.scrollTop = chat.scrollHeight;
+      setTimeout(() => {
+        chat.scrollTop = chat.scrollHeight;
+      }, 0);
     },
     deleteAll: function() {
       this.contacts[this.focus].messages.splice(0, this.contacts[this.focus].messages.length);
@@ -217,8 +222,5 @@ let app = new Vue({
     setTimeout(() => {
       this.appLoading = false;
     }, 2000);
-  },
-  updated: function() {
-    this.updateScroll();
   }
 });
