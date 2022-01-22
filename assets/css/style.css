@@ -16,7 +16,7 @@ body {
   color: #525252;
 }
 
-#app {
+#app > div {
   display: flex;
 }
 
@@ -113,12 +113,6 @@ i.fas {
   justify-content: space-between;
   align-items: center;
   gap: 30px;
-}
-
-main > .top-bar .options {
-  top: 60px;
-  right: 25px;
-  font-size: 1.2rem;
 }
 
 /* Lato sinistro */
@@ -250,7 +244,6 @@ main > .welcome > div {
 }
 
 main > .welcome > .title {
-  /* margin-bottom: 30px; */
   font-size: 2.5rem;
   color: #525252;
 }
@@ -259,6 +252,12 @@ main > .welcome > .title {
 
 main .top-bar {
   border-bottom: 1px solid #dadada;
+}
+
+main .top-bar .options {
+  top: 60px;
+  right: 25px;
+  font-size: 1.2rem;
 }
 
 main .top-bar .name {
