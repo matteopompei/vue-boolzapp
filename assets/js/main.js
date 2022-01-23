@@ -230,16 +230,33 @@ let app = new Vue({
       this.focus = -1;
       this.contacts.splice(index, 1);
     },
-    newChat: function() {
-      this.contacts.push({
-        name: this.newContactName,
-        avatar: this.newContactAvatar,
-        visible: true,
-        active: false,
-        options: false,
-        status: "Ultimo accesso oggi alle " + dayjs().format("HH:mm"),
-        messages: []
-      })
+    newChat: function () {
+      this.newChatPopup = false;
+      this.focus = this.contacts.length;
+      let checkSpace = this.newContactName.replace(/ /g, "");
+      if (checkSpace != "") {
+        if (this.newContactAvatar.startsWith("https://") || this.newContactAvatar.startsWith("http://")) {
+          this.contacts.push({
+            name: this.newContactName,
+            avatar: this.newContactAvatar,
+            visible: true,
+            active: false,
+            options: false,
+            status: "Ultimo accesso oggi alle " + dayjs().format("HH:mm"),
+            messages: []
+          });
+        } else {
+          this.contacts.push({
+            name: this.newContactName,
+            avatar: "assets/img/default-avatar.png",
+            visible: true,
+            active: false,
+            options: false,
+            status: "Ultimo accesso oggi alle " + dayjs().format("HH:mm"),
+            messages: []
+          });
+        }
+      };
     }
   },
   mounted: function () {
