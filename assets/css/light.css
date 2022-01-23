@@ -38,6 +38,39 @@ body {
 
 /* Barra superiore sx */
 
+/* Aggiung contatto */
+
+.new-chat {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.new-chat > div {
+  background: #ededed;
+  border: 1px solid #dadada;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.new-chat > div > .fa-times:hover {
+  color: #000;
+}
+
+.new-chat > div > input {
+  background: #fff;
+  color: #000;
+}
+
+.new-chat > div > input::placeholder {
+  color: #999999;
+}
+
+.new-chat > div > input[type="button"] {
+  background: #dadada;
+}
+
+.new-chat > div > input[type="button"]:hover {
+  background: #ffffff;
+}
+
 /* Barra di ricerca */
 
 aside > .search-bar {

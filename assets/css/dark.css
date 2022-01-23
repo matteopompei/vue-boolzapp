@@ -38,6 +38,39 @@ body {
 
 /* Barra superiore sx */
 
+/* Aggiung contatto */
+
+.new-chat {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.new-chat > div {
+  background: #2a2f32;
+  border: 1px solid #3f4448;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.new-chat > div > .fa-times:hover {
+  color: #fff;
+}
+
+.new-chat > div > input {
+  background: #323739;
+  color: #c0c2c4;
+}
+
+.new-chat > div > input::placeholder {
+  color: #848788;
+}
+
+.new-chat > div > input[type="button"] {
+  background: #4a5257;
+}
+
+.new-chat > div > input[type="button"]:hover {
+  background: #5a6469;
+}
+
 /* Barra di ricerca */
 
 aside > .search-bar {
@@ -92,7 +125,7 @@ aside > .contact-list > .contact > .date {
 /* Lato destro */
 
 main {
-  border-left: 1px solid #282f32;
+  border-left: 1px solid #3f4448;
 }
 
 /* Messaggio di benvenuto */

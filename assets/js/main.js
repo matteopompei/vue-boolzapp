@@ -167,7 +167,8 @@ let app = new Vue({
     inputSearch: "",
     hiddenClass: false,
     darkMode: false,
-    introImg: "assets/img/intro-light.jpg"
+    introImg: "assets/img/intro-light.jpg",
+    newChatPopup: false,
   },
   methods: {
     changeChat: function (index) {
@@ -204,7 +205,8 @@ let app = new Vue({
       this.updateScroll();
       this.contacts[focus].status = "Online";
       setTimeout(() => {
-        this.contacts[focus].status = "Ultimo accesso oggi alle " + dayjs().format("HH:mm");
+        this.contacts[focus].status =
+          "Ultimo accesso oggi alle " + dayjs().format("HH:mm");
       }, 2000);
     },
     deleteMessage: function (index) {
@@ -216,25 +218,28 @@ let app = new Vue({
         chat.scrollTop = chat.scrollHeight;
       }, 0);
     },
-    deleteAll: function() {
-      this.contacts[this.focus].messages.splice(0, this.contacts[this.focus].messages.length);
+    deleteAll: function () {
+      this.contacts[this.focus].messages.splice(
+        0,
+        this.contacts[this.focus].messages.length
+      );
     },
-    deleteChat: function(index) {
+    deleteChat: function (index) {
       this.focus = -1;
       this.contacts.splice(index, 1);
     },
   },
-  mounted: function(){
+  mounted: function () {
     setTimeout(() => {
       this.appLoading = false;
     }, 2000);
-  }
+  },
 });
 
 // Cambio tema
 let tema = document.getElementById("tema");
 
-document.querySelector(".change-theme").addEventListener("click", function() {
+document.querySelector(".change-theme").addEventListener("click", function () {
   if (tema.getAttribute("href") == "assets/css/light.css") {
     tema.setAttribute("href", "assets/css/dark.css");
   } else {

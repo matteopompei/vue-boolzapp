@@ -21,14 +21,23 @@
         <i class="fas fa-circle-notch"></i>
         Caricamento... Attendi.
       </div>
-      <div>
+      <div class="ui">
         <aside>
           <div class="top-bar">
             <img src="assets/img/user-avatar.jpg" alt="" class="avatar" />
             <div>
               <i class="fas fa-sun change-theme" @click="darkMode = true, introImg = 'assets/img/intro-dark.jpg'" v-if="darkMode == false"></i>
-              <i class="fas fa-moon change-theme"@click="darkMode = false, introImg = 'assets/img/intro-light.jpg'" v-else></i>
-              <i class="fas fa-plus"></i>
+              <i class="fas fa-moon change-theme" @click="darkMode = false, introImg = 'assets/img/intro-light.jpg'" v-else></i>
+              <i class="fas fa-plus" @click="newChatPopup = true"></i>
+              <div class="new-chat" v-if="newChatPopup == true">
+                <div>
+                  <i class="fas fa-times" @click="newChatPopup = false"></i>
+                  <span>Nuova Chat</span>
+                  <input type="text" placeholder="Inserisci il nome del nuovo contatto">
+                  <input type="text" placeholder="Inserisci il link dell'immagine di profilo">
+                  <input type="button" value="Crea">
+                </div>
+              </div>
               <i class="fas fa-ellipsis-h"></i>
             </div>
           </div>
