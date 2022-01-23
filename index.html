@@ -33,9 +33,9 @@
                 <div>
                   <i class="fas fa-times" @click="newChatPopup = false"></i>
                   <span>Nuova Chat</span>
-                  <input type="text" placeholder="Inserisci il nome del nuovo contatto">
-                  <input type="text" placeholder="Inserisci il link dell'immagine di profilo">
-                  <input type="button" value="Crea">
+                  <input type="text" placeholder="Inserisci il nome del nuovo contatto" v-model="newContactName">
+                  <input type="text" placeholder="Inserisci il link dell'immagine di profilo" v-model="newContactAvatar">
+                  <input type="button" value="Crea" @click="newChat()">
                 </div>
               </div>
               <i class="fas fa-ellipsis-h"></i>

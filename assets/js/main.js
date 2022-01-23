@@ -169,6 +169,8 @@ let app = new Vue({
     darkMode: false,
     introImg: "assets/img/intro-light.jpg",
     newChatPopup: false,
+    newContactName: "",
+    newContactAvatar: "",
   },
   methods: {
     changeChat: function (index) {
@@ -228,6 +230,17 @@ let app = new Vue({
       this.focus = -1;
       this.contacts.splice(index, 1);
     },
+    newChat: function() {
+      this.contacts.push({
+        name: this.newContactName,
+        avatar: this.newContactAvatar,
+        visible: true,
+        active: false,
+        options: false,
+        status: "Ultimo accesso oggi alle " + dayjs().format("HH:mm"),
+        messages: []
+      })
+    }
   },
   mounted: function () {
     setTimeout(() => {
