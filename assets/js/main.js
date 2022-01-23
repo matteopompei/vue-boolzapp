@@ -193,11 +193,10 @@ let app = new Vue({
         setTimeout(() => {
           this.contacts[focus].status = "Sta scrivendo...";
         }, 1500);
-        setTimeout(this.sendReply(focus), 3000);
+        setTimeout(() => {this.sendReply(focus)}, 3000);
       }
     },
     sendReply: function (focus) {
-      console.log("ciao");
       this.contacts[focus].messages.push({
         text: "Bravo",
         date: dayjs().format("DD/MM/YYYY HH:mm"),

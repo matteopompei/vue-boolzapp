@@ -241,7 +241,7 @@ aside > .contact-list > .contact > .avatar img {
 
 aside > .contact-list > .contact > .info {
   flex-grow: 1;
-  width: 50%;
+  width: 30%;
 }
 
 aside > .contact-list > .contact > .info > .name {
