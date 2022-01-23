@@ -235,7 +235,15 @@ let app = new Vue({
       this.focus = this.contacts.length;
       let checkSpace = this.newContactName.replace(/ /g, "");
       if (checkSpace != "") {
-        if (this.newContactAvatar.startsWith("https://") || this.newContactAvatar.startsWith("http://")) {
+        if (
+          this.newContactAvatar.endsWith(".jpg") ||
+          this.newContactAvatar.endsWith(".jpeg") ||
+          this.newContactAvatar.endsWith(".jpg") ||
+          this.newContactAvatar.endsWith(".gif") ||
+          this.newContactAvatar.endsWith(".png") ||
+          this.newContactAvatar.endsWith(".svg") ||
+          this.newContactAvatar.endsWith(".bmp")
+        ) {
           this.contacts.push({
             name: this.newContactName,
             avatar: this.newContactAvatar,
@@ -243,7 +251,7 @@ let app = new Vue({
             active: false,
             options: false,
             status: "Ultimo accesso oggi alle " + dayjs().format("HH:mm"),
-            messages: []
+            messages: [],
           });
         } else {
           this.contacts.push({
@@ -253,11 +261,13 @@ let app = new Vue({
             active: false,
             options: false,
             status: "Ultimo accesso oggi alle " + dayjs().format("HH:mm"),
-            messages: []
+            messages: [],
           });
         }
-      };
-    }
+      }
+      this.newContactName = "";
+      this.newContactAvatar = "";
+    },
   },
   mounted: function () {
     setTimeout(() => {
