@@ -91,9 +91,9 @@
                 <i class="fas fa-phone-alt"></i>
                 <i class="fas fa-search"></i>
                 <i class="fas fa-ellipsis-h" @click="contacts[focus].options = !contacts[focus].options"></i>
-                <div class="options" v-if="contacts[focus].options">
-                  <a href="#" @click="deleteAll()">Elimina messaggi</a>
-                  <a href="#" @click="deleteChat(focus)">Elimina chat</a>
+                <div class="options" v-if="contacts[focus].options" @mouseleave="contacts[focus].options = false">
+                  <a href="#" @click="deleteAll(), contacts[focus].options = false">Elimina messaggi</a>
+                  <a href="#" @click="deleteChat(focus), contacts[focus].options = false">Elimina chat</a>
                 </div>
               </div>
             </div>
@@ -109,9 +109,9 @@
                   class="fas fa-angle-down"
                   @click="message.openMessageOption = !message.openMessageOption"
                 ></i>
-                <div class="options" v-if="message.openMessageOption">
+                <div class="options" v-if="message.openMessageOption" @mouseleave="message.openMessageOption = false">
                   <a href="#">Info messaggio</a>
-                  <a href="#" @click="deleteMessage(index)">Cancella messaggio</a>
+                  <a href="#" @click="deleteMessage(index), message.openMessageOption = false">Cancella messaggio</a>
                 </div>
               </div>
             </div>
