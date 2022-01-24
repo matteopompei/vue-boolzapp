@@ -54,7 +54,7 @@
               :class="{active: focus == index}"
               v-for="(contact, index) in contacts"
               @click="changeChat(index)"
-              v-if="contact.name.toLowerCase().includes(inputSearch)"
+              v-if="contact.name.toLowerCase().includes(inputSearch.toLowerCase())"
             >
               <div class="avatar">
                 <img :src="contact.avatar" alt="" />
@@ -116,7 +116,7 @@
               </div>
             </div>
             <div class="message-bar">
-              <i class="fas fa-grin-alt"></i>
+              <i class="far fa-smile"></i>
               <i class="fas fa-paperclip"></i>
               <input
                 type="text"
