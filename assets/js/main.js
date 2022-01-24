@@ -171,6 +171,30 @@ let app = new Vue({
     newChatPopup: false,
     newContactName: "",
     newContactAvatar: "",
+    answersArr: [
+      "Ma dici a me?",
+      "Il cammino dell'uomo timorato è minacciato da ogni parte dalle iniquità degli esseri egoisti e dalla tirannia degli uomini malvagi. Benedetto sia colui che nel nome della carità e della buona volontà conduce i deboli attraverso la valle delle tenebre, perché egli è in verità il pastore di suo fratello e il ricercatore dei figli smarriti. E la mia giustizia calerà sopra di loro con grandissima vendetta e furiosissimo sdegno su coloro che si proveranno ad ammorbare e infine a distruggere i miei fratelli. E tu saprai che il mio nome è quello del Signore quando farò calare la mia vendetta sopra di te!",
+      "Uno stregone non è mai in ritardo né in anticipo. Arriva precisamente quando intende farlo.",
+      "Qual è la cosa più grossa che hai perso a testa o croce?",
+      "Avvampando gli angeli caddero; profondo il tuono riempì le loro rive, bruciando con i roghi dell'orco.",
+      "Non cedete loro niente! Ma prendete da loro tutto!",
+      "Come diceva John Wayne: \"Un giorno senza sangue è come un giorno senza sole\".",
+      "I morti sanno soltanto una cosa: che è meglio essere vivi.",
+      "Presto, tutti quanti ci troviamo faccia a faccia con la scelta tra fare quello che è più giusto o quello che è più facile fare",
+      "Allora è vero: gli animali sentono il male!",
+      "Non so cosa facciano quattro nove, ma l'asso mi pare una carta abbastanza alta!",
+      "Nessuno più chiamarmi fifone!",
+      "Non c'è nulla di più fuorviante dell'ovvio.",
+      "Cosa sarebbe peggio? Vivere da mostro o morire da uomo per bene?",
+      "Io non voglio morire sobrio.",
+      "Che vuol dire \"reale\"? Dammi una definizione di \"reale\".",
+      "Au Revoir, Shosanna!",
+      "Mi piace come muori, giovane...",
+      "Io non leggo il copione, il copione legge me!",
+      "Corri Forrest, corri!",
+      "Io ho scelto di non scegliere la vita: ho scelto qualcos'altro.",
+      "Salute, Butterfly. Il bosco è magnifico, profondo all'imbrunire. E io ho promesse da mantenere e miglia da percorrere prima di dormire. Mi hai sentito Butterfly? Miglia da percorrere prima di dormire!",
+    ],
   },
   methods: {
     changeChat: function (index) {
@@ -197,12 +221,12 @@ let app = new Vue({
         }
         setTimeout(() => {
           this.sendReply(focus);
-        }, 3000);
+        }, 2000);
       }
     },
     sendReply: function (focus) {
       this.contacts[focus].messages.push({
-        text: "Bravo",
+        text: this.answersArr[Math.floor(Math.random() * this.answersArr.length)],
         date: dayjs().format("DD/MM/YYYY HH:mm"),
         status: "received",
         openMessageOption: false,
