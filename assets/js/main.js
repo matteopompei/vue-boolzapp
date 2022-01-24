@@ -187,13 +187,17 @@ let app = new Vue({
         });
         this.updateScroll();
         this.inputMessage = "";
+        if (this.contacts[focus].status != "Sta scrivendo...") {
+          setTimeout(() => {
+            this.contacts[focus].status = "Online";
+          }, 500);
+          setTimeout(() => {
+            this.contacts[focus].status = "Sta scrivendo...";
+          }, 1500);
+        }
         setTimeout(() => {
-          this.contacts[focus].status = "Online";
-        }, 500);
-        setTimeout(() => {
-          this.contacts[focus].status = "Sta scrivendo...";
-        }, 1500);
-        setTimeout(() => {this.sendReply(focus)}, 3000);
+          this.sendReply(focus);
+        }, 3000);
       }
     },
     sendReply: function (focus) {
